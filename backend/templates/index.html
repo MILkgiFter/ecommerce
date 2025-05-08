@@ -1,1 +1,28 @@
-<h1>Обновленный заголовок для демонстрации CI/CD</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated E-commerce</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Обновленный E-commerce сайт (изменен через CI/CD)</h1>
+
+    {% if session.username %}
+        <p>Вы вошли как <strong>{{ session.username }}</strong></p>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Выйти</button>
+        </form>
+        <form action="{{ url_for('delete_profile') }}" method="POST">
+            <button type="submit">Удалить профиль</button>
+        </form>
+        <a href="/profile">Профиль</a>
+        <a href="/cart">Корзина</a>
+    {% else %}
+        <a href="/auth">Вход / Регистрация</a>
+    {% endif %}
+
+    <a href="/products">Просмотреть продукты</a>
+</body>
+</html>
