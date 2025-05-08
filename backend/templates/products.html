@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Продукты</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Все продукты</h1>
@@ -46,6 +46,6 @@
         {% endfor %}
     </ul>
 
-    <button onclick="window.location.href='{{ url_for('index') }}'">На главную</button>
+    <a href="/">На главную</a>
 </body>
 </html>

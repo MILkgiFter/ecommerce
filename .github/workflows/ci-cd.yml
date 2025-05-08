@@ -7,31 +7,73 @@ on:
 jobs:
   build-and-deploy:
     runs-on: self-hosted
-
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
-    - name: Login to Docker Registry
+    
+    - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
-        registry: ${{ secrets.DOCKER_REGISTRY_URL }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
+    
     - name: Build and push Docker image
       env:
-        DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
-        CI_COMMIT_SHA: ${{ github.sha }}
-        MONGO_URI: ${{ secrets.MONGO_URI }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        GITHUB_SHA: ${{ github.sha }}
       run: |
-        docker-compose build
-        docker-compose push
-
+        docker build -t $DOCKER_USERNAME/ecommerce-app:$GITHUB_SHA .
+        docker push $DOCKER_USERNAME/ecommerce-app:$GITHUB_SHA
+        docker tag $DOCKER_USERNAME/ecommerce-app:$GITHUB_SHA $DOCKER_USERNAME/ecommerce-app:latest
+        docker push $DOCKER_USERNAME/ecommerce-app:latest
+        echo "Image pushed successfully: $DOCKER_USERNAME/ecommerce-app:$GITHUB_SHA"
+    
     - name: Deploy to Docker Swarm
       env:
-        DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
-        CI_COMMIT_SHA: ${{ github.sha }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        GITHUB_SHA: ${{ github.sha }}
         MONGO_URI: ${{ secrets.MONGO_URI }}
       run: |
-        docker stack deploy --compose-file docker-compose.yml --with-registry-auth ecommerce-stack
+        echo "Deploying to Docker Swarm..."
+        
+        # Создаем временный docker-compose.yml файл с актуальными значениями
+        cat > deploy-compose.yml << EOL
+        version: '3.8'
+        
+        services:
+          ecommerce-app:
+            image: \$DOCKER_USERNAME/ecommerce-app:\$GITHUB_SHA
+            ports:
+              - "5000:5000"
+            deploy:
+              replicas: 2
+              placement:
+                constraints:
+                  - node.role == worker
+              restart_policy:
+                condition: on-failure
+              update_config:
+                parallelism: 1
+                delay: 10s
+                order: start-first
+            environment:
+              - MONGO_URI=\$MONGO_URI
+            networks:
+              - ecommerce-network
+        
+        networks:
+          ecommerce-network:
+            driver: overlay
+        EOL
+        
+        # Вывод для отладки
+        echo "Deploying stack with the following configuration:"
+        cat deploy-compose.yml
+        
+        # Развертывание в Docker Swarm
+        docker stack deploy --compose-file deploy-compose.yml --with-registry-auth ecommerce-stack
+        
+        # Проверка статуса развертывания
+        echo "Stack services status:"
+        docker stack services ecommerce-stack

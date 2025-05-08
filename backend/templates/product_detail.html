@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ product.name }}</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image_url }}" alt="{{ product.name }}" width="300">
     <p>{{ product.description }}</p>
     <p>Цена: {{ product.price }} Тенге</p>
-    <p>Просмотров: {{ product.views }}</p> <!-- Количество просмотров -->
+    <p>Просмотров: {{ product.views }}</p>
 
     <form action="{{ url_for('add_to_cart', product_id=product._id) }}" method="POST">
         <button type="submit">Добавить в корзину</button>
     </form>
     <p>Likes: {{ product.likes }}</p>
-<form action="{{ url_for('like_product', product_id=product._id) }}" method="post">
-    <button type="submit">👍 Like</button>
-</form>
-<h2>Recommended Products</h2>
-<ul>
-    {% if recommendations %}
-        {% for recommended_product in recommendations %}
-            <li>
-                <a href="{{ url_for('view_product', product_id=recommended_product._id) }}">
-                    <img src="{{ recommended_product.image_url }}" alt="{{ recommended_product.name }}" style="width:100px;height:auto;">
-                    <p>{{ recommended_product.name }}</p>
-                    <p>{{ recommended_product.price }} тенге</p>
-                </a>
-            </li>
-        {% endfor %}
-    {% else %}
-        <p>No recommendations available</p>
-    {% endif %}
-</ul>
+    <form action="{{ url_for('like_product', product_id=product._id) }}" method="post">
+        <button type="submit">👍 Like</button>
+    </form>
+    <h2>Recommended Products</h2>
+    <ul>
+        {% if recommendations %}
+            {% for recommended_product in recommendations %}
+                <li>
+                    <a href="{{ url_for('view_product', product_id=recommended_product._id) }}">
+                        <img src="{{ recommended_product.image_url }}" alt="{{ recommended_product.name }}" style="width:100px;height:auto;">
+                        <p>{{ recommended_product.name }}</p>
+                        <p>{{ recommended_product.price }} тенге</p>
+                    </a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No recommendations available</p>
+        {% endif %}
+    </ul>
 
-    <button onclick="window.location.href='{{ url_for('index') }}'">Назад на главную</button>
+    <a href="{{ url_for('get_products') }}">Назад к продуктам</a>
 </body>
 </html>

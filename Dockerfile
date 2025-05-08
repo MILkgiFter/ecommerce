@@ -6,11 +6,11 @@ WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем весь проект
+# Копируем весь код приложения
 COPY backend/ .
 
-# Порт для приложения Flask
+# Порт для Flask
 EXPOSE 5000
 
-# Запускаем приложение
+# Запуск приложения
 CMD ["python", "api.py"]

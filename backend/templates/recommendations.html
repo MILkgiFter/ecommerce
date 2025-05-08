@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рекомендации</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Рекомендации для {{ user_id }}</h1>
-    <ul id="recommendation-list"></ul>
+    <ul id="recommendation-list">
+        {% if recommendations %}
+            {% for product in recommendations %}
+                <li>{{ product.name }} - {{ product.price }} тенге</li>
+            {% endfor %}
+        {% else %}
+            <li>Нет доступных рекомендаций</li>
+        {% endif %}
+    </ul>
     <a href="/">Назад</a>
-    <script>
-        fetch(`/recommendations/${user_id}`)
-            .then(response => response.json())
-            .then(recommendations => {
-                const recommendationList = document.getElementById('recommendation-list');
-                recommendations.forEach(product => {
-                    const li = document.createElement('li');
-                    li.textContent = `${product.name} - ${product.price} руб.`;
-                    recommendationList.appendChild(li);
-                });
-            });
-    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль пользователя</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение ваших стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Профиль пользователя</h1>
@@ -34,8 +34,6 @@
         <button type="submit">Сохранить изменения</button>
     </form>
 
-    <form action="{{ url_for('index') }}" method="GET">
-        <button type="submit">Назад</button>
-    </form>
+    <a href="/">Назад</a>
 </body>
 </html>

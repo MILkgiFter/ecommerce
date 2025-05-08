@@ -1,3 +1,4 @@
+import os
 
 from bson import ObjectId
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session, Response
@@ -10,12 +11,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import bcrypt
 import secrets
 import json
+try:
+    from models.users import User
+    from models.products import Product
+except ImportError:
+    # Если файлы еще не перемещены
+    pass
 
 app = Flask(__name__)
 cart = []
 
-# Подключение к MongoDB
-uri = "mongodb+srv://dik:diko@cluster0.7tkxp.mongodb.net/web_logs?retryWrites=true&w=majority"
+# Подключение к MongoDB через переменную окружения или дефолтное значение
+uri = os.environ.get('MONGO_URI', "mongodb+srv://dik:diko@cluster0.7tkxp.mongodb.net/web_logs?retryWrites=true&w=majority")
 client = MongoClient(uri)
 db = client['ecomercedatabase']  # Замените на имя вашей базы данных
 
@@ -450,4 +457,6 @@ def recommendations_page(user_id):
     return render_template('recommendations.html', user_id=user_id, recommendations=[])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    # Запуск приложения на всех интерфейсах (для работы в Docker)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+

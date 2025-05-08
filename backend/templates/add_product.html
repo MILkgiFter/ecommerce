@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добавить продукт</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Добавить новый продукт</h1>
@@ -28,7 +28,7 @@
     </form>
 
     <!-- Кнопка для возврата на главную страницу -->
-    <button onclick="window.location.href='{{ url_for('get_products') }}'">К Продуктам</button>
+    <a href="{{ url_for('get_products') }}">К Продуктам</a>
 
     <h2>Все продукты</h2>
     <ul>

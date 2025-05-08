@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Е-commerce</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение ваших стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Добро пожаловать в E-commerce</h1>
@@ -17,10 +17,10 @@
         <form action="{{ url_for('delete_profile') }}" method="POST">
             <button type="submit">Удалить профиль</button>
         </form>
-        <a href="/profile">Профиль</a> <!-- Ссылка на профиль -->
-        <a href="/cart">Корзина</a> <!-- Ссылка на корзину -->
+        <a href="/profile">Профиль</a>
+        <a href="/cart">Корзина</a>
     {% else %}
-        <a href="/auth">Вход / Регистрация</a> <!-- Ссылка на страницу входа и регистрации -->
+        <a href="/auth">Вход / Регистрация</a>
     {% endif %}
 
     <a href="/products">Просмотреть продукты</a>
