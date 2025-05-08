@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История покупок</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>История покупок для пользователя {{ user_id }}</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                Заказ от {{ order.timestamp }}:
+                <ul>
+                    {% for product in order.products %}
+                        <li>{{ product }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Назад</a>
+</body>
+</html>

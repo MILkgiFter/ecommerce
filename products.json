@@ -1,0 +1,382 @@
+[
+    {
+        "_id": {"$oid": "6718bd1c1c943c2091aafc9e"},
+        "name": "Груши",
+        "description": "Спелые груши с тонкой кожицей",
+        "price": 600,
+        "category": "фрукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Pear.jpg",
+        "likes": 0,
+        "views": 10
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c944c2091aafc9f"},
+        "name": "Апельсины",
+        "description": "Сочные апельсины для свежего сока",
+        "price": 450,
+        "category": "фрукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg",
+        "likes": 0,
+        "views": 22
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c945c2091aafc9d"},
+        "name": "Клубника",
+        "description": "Сладкая клубника из сада",
+        "price": 800,
+        "category": "фрукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/PerfectStrawberry.jpg",
+        "likes": 0,
+        "views": 12
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c946c2091aafc9e"},
+        "name": "Авокадо",
+        "description": "Спелое авокадо для салатов",
+        "price": 1200,
+        "category": "фрукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Avocado_with_cross_section_edit.jpg",
+        "likes": 0,
+        "views": 18
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c947c2091aafc9d"},
+        "name": "Огурцы",
+        "description": "Свежие огурцы с огорода",
+        "price": 350,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Cucumbers.jpg",
+        "likes": 0,
+        "views": 30
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c948c2091aafc9f"},
+        "name": "Помидоры",
+        "description": "Сочные помидоры для салатов",
+        "price": 400,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg",
+        "likes": 0,
+        "views": 25
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c949c2091aafc9e"},
+        "name": "Морковь",
+        "description": "Свежая морковь для готовки",
+        "price": 300,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Carrots.JPG",
+        "likes": 0,
+        "views": 14
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c950c2091aafc9f"},
+        "name": "Картофель",
+        "description": "Картофель для любых блюд",
+        "price": 250,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Aardappel_Soline.jpg",
+        "likes": 0,
+        "views": 40
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c951c2091aafc9c"},
+        "name": "Капуста",
+        "description": "Белокочанная капуста",
+        "price": 300,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Cabbage_and_cross_section_on_white.jpg",
+        "likes": 0,
+        "views": 22
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c952c2091aafc9d"},
+        "name": "Зелень",
+        "description": "Свежая зелень укропа",
+        "price": 100,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Dill.jpg",
+        "likes": 0,
+        "views": 10
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c953c2091aafc9e"},
+        "name": "Грибы",
+        "description": "Шампиньоны для жарки",
+        "price": 600,
+        "category": "овощи",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Champignon_closeup.jpg",
+        "likes": 0,
+        "views": 20
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c954c2091aafc9f"},
+        "name": "Кефир",
+        "description": "Кефир для здоровья",
+        "price": 250,
+        "category": "молочные продукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Kefir_and_ingredients.jpg",
+        "likes": 0,
+        "views": 12
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c955c2091aafc9d"},
+        "name": "Молоко",
+        "description": "Свежий литр молока",
+        "price": 200,
+        "category": "молочные продукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Milk_glass.jpg",
+        "likes": 0,
+        "views": 15
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c956c2091aafc9e"},
+        "name": "Сыр",
+        "description": "Твердый сыр для завтраков",
+        "price": 800,
+        "category": "молочные продукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Parmesan.jpg",
+        "likes": 0,
+        "views": 20
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c957c2091aafc9f"},
+        "name": "Йогурт",
+        "description": "Натуральный йогурт без сахара",
+        "price": 300,
+        "category": "молочные продукты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Yogurt.jpg",
+        "likes": 0,
+        "views": 18
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c958c2091aafc9d"},
+        "name": "Чай",
+        "description": "Черный чай с добавками",
+        "price": 150,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cup_of_tea.jpg",
+        "likes": 0,
+        "views": 21
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c959c2091aafc9e"},
+        "name": "Кофе",
+        "description": "Молотый кофе для бодрости",
+        "price": 350,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Espresso_doppio.jpg",
+        "likes": 0,
+        "views": 30
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c960c2091aafc9f"},
+        "name": "Минеральная вода",
+        "description": "Газированная минеральная вода",
+        "price": 100,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Glass_of_Mineral_Water.jpg",
+        "likes": 0,
+        "views": 10
+    },
+  {
+        "_id": {"$oid": "6718bd1c1c961c2091aafc9c"},
+        "name": "Сок яблочный",
+        "description": "Натуральный яблочный сок",
+        "price": 250,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Apple_Juice.jpg",
+        "likes": 0,
+        "views": 18
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c962c2091aafc9d"},
+        "name": "Сок апельсиновый",
+        "description": "Свежевыжатый апельсиновый сок",
+        "price": 300,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Orange_juice_1_edit1.jpg",
+        "likes": 0,
+        "views": 20
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c963c2091aafc9e"},
+        "name": "Булка",
+        "description": "Свежая булка с хрустящей корочкой",
+        "price": 150,
+        "category": "выпечка",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/French_Bread.jpg",
+        "likes": 0,
+        "views": 25
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c964c2091aafc9f"},
+        "name": "Круассан",
+        "description": "Круассан с шоколадной начинкой",
+        "price": 200,
+        "category": "выпечка",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Croissant_cut_open.jpg",
+        "likes": 0,
+        "views": 15
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c965c2091aafc9c"},
+        "name": "Батон",
+        "description": "Мягкий батон для сэндвичей",
+        "price": 120,
+        "category": "выпечка",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Baguette.jpg",
+        "likes": 0,
+        "views": 10
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c966c2091aafc9d"},
+        "name": "Торт",
+        "description": "Шоколадный торт с ягодами",
+        "price": 1000,
+        "category": "десерты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Chocolate_Cake_2.jpg",
+        "likes": 0,
+        "views": 35
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c967c2091aafc9e"},
+        "name": "Пирожное",
+        "description": "Пирожное с клубничной начинкой",
+        "price": 300,
+        "category": "десерты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Strawberry_Tart.jpg",
+        "likes": 0,
+        "views": 20
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c968c2091aafc9f"},
+        "name": "Кексы",
+        "description": "Шоколадные кексы с орехами",
+        "price": 200,
+        "category": "десерты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Chocolate_Cupcake.jpg",
+        "likes": 0,
+        "views": 18
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c969c2091aafc9d"},
+        "name": "Печенье",
+        "description": "Сахарное печенье с кусочками шоколада",
+        "price": 150,
+        "category": "десерты",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Chocolate_Chip_Cookies_-_kimberlykv.jpg",
+        "likes": 0,
+        "views": 22
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c970c2091aafc9c"},
+        "name": "Леденцы",
+        "description": "Леденцы с фруктовым вкусом",
+        "price": 100,
+        "category": "сладости",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Fruit_Lollipops.jpg",
+        "likes": 0,
+        "views": 10
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c971c2091aafc9e"},
+        "name": "Мармелад",
+        "description": "Мармеладные конфеты в форме мишек",
+        "price": 200,
+        "category": "сладости",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Gummy_bears.jpg",
+        "likes": 0,
+        "views": 15
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c972c2091aafc9f"},
+        "name": "Шоколад",
+        "description": "Молочный шоколад с орехами",
+        "price": 250,
+        "category": "сладости",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Chocolate_bar.jpg",
+        "likes": 0,
+        "views": 28
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c973c2091aafc9c"},
+        "name": "Паста",
+        "description": "Итальянская паста для приготовления",
+        "price": 300,
+        "category": "макароны",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Pasta_Arrabiata.JPG",
+        "likes": 0,
+        "views": 10
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c974c2091aafc9d"},
+        "name": "Спагетти",
+        "description": "Длинные спагетти из твердых сортов",
+        "price": 280,
+        "category": "макароны",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Spaghetti_noodles.jpg",
+        "likes": 0,
+        "views": 12
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c975c2091aafc9e"},
+        "name": "Рис",
+        "description": "Длиннозерный белый рис",
+        "price": 150,
+        "category": "крупы",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Basmati_Rice.jpg",
+        "likes": 0,
+        "views": 20
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c976c2091aafc9f"},
+        "name": "Гречка",
+        "description": "Полезная гречневая крупа",
+        "price": 170,
+        "category": "крупы",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Buckwheat.jpg",
+        "likes": 0,
+        "views": 18
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c977c2091aafc9c"},
+        "name": "Овсянка",
+        "description": "Овсяные хлопья для завтрака",
+        "price": 130,
+        "category": "крупы",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Oatmeal_cup.jpg",
+        "likes": 0,
+        "views": 22
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c978c2091aafc9d"},
+        "name": "Соль",
+        "description": "Мелкая пищевая соль",
+        "price": 50,
+        "category": "приправы",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/SaltShaker.jpg",
+        "likes": 0,
+        "views": 30
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c979c2091aafc9e"},
+        "name": "Сахар",
+        "description": "Кристаллический сахар",
+        "price": 70,
+        "category": "приправы",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Crystal_sugar.jpg",
+        "likes": 0,
+        "views": 27
+    },
+    {
+        "_id": {"$oid": "6718bd1c1c980c2091aafc9f"},
+        "name": "Чай",
+        "description": "Черный чай в пакетиках",
+        "price": 150,
+        "category": "напитки",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Black_tea.jpg",
+        "likes": 0,
+        "views": 35
+    }
+]

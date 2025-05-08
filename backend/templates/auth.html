@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход и Регистрация</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение ваших стилей -->
+</head>
+<body>
+    <h1>Добро пожаловать!</h1>
+
+    <div>
+        <h2>Вход</h2>
+        <form action="/login" method="POST">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Регистрация</h2>
+        <form action="/register" method="POST">
+            <label for="register_username">Имя пользователя:</label>
+            <input type="text" id="register_username" name="username" required>
+            <br>
+            <label for="register_password">Пароль:</label>
+            <input type="password" id="register_password" name="password" required>
+            <br>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <br>
+    <form action="{{ url_for('index') }}" method="GET">
+        <button type="submit">Назад</button>
+    </form>
+</body>
+</html>

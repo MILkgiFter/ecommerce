@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Е-commerce</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение ваших стилей -->
+</head>
+<body>
+    <h1>Добро пожаловать в E-commerce</h1>
+
+    {% if session.username %}
+        <p>Вы вошли как <strong>{{ session.username }}</strong></p>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Выйти</button>
+        </form>
+        <form action="{{ url_for('delete_profile') }}" method="POST">
+            <button type="submit">Удалить профиль</button>
+        </form>
+        <a href="/profile">Профиль</a> <!-- Ссылка на профиль -->
+        <a href="/cart">Корзина</a> <!-- Ссылка на корзину -->
+    {% else %}
+        <a href="/auth">Вход / Регистрация</a> <!-- Ссылка на страницу входа и регистрации -->
+    {% endif %}
+
+    <a href="/products">Просмотреть продукты</a>
+</body>
+</html>

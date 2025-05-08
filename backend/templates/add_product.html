@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить продукт</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+</head>
+<body>
+    <h1>Добавить новый продукт</h1>
+    <form action="/add_product" method="POST">
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <label for="price">Цена:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br>
+
+        <label for="category">Категория:</label>
+        <input type="text" id="category" name="category" required><br>
+
+        <label for="image_url">URL изображения:</label>
+        <input type="text" id="image_url" name="image_url" required><br>
+
+        <button type="submit">Добавить продукт</button>
+    </form>
+
+    <!-- Кнопка для возврата на главную страницу -->
+    <button onclick="window.location.href='{{ url_for('get_products') }}'">К Продуктам</button>
+
+    <h2>Все продукты</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> — {{ product.price }} Тенге
+                <a href="{{ url_for('edit_product', product_id=product._id) }}">Редактировать</a>
+                <form action="{{ url_for('delete_product', product_id=product._id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Удалить</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

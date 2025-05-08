@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации</title>
+</head>
+<body>
+    <h1>Рекомендации для {{ user_id }}</h1>
+    <ul id="recommendation-list"></ul>
+    <a href="/">Назад</a>
+    <script>
+        fetch(`/recommendations/${user_id}`)
+            .then(response => response.json())
+            .then(recommendations => {
+                const recommendationList = document.getElementById('recommendation-list');
+                recommendations.forEach(product => {
+                    const li = document.createElement('li');
+                    li.textContent = `${product.name} - ${product.price} руб.`;
+                    recommendationList.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>

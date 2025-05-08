@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукты</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+</head>
+<body>
+    <h1>Все продукты</h1>
+
+    <!-- Форма для фильтрации и поиска -->
+    <form method="GET" action="{{ url_for('get_products') }}">
+        <label for="category">Категория:</label>
+        <select name="category" id="category">
+            <option value="">Все</option>
+            {% for category in categories %}
+                <option value="{{ category }}" {% if request.args.get('category') == category %}selected{% endif %}>{{ category }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="min_views">Минимум просмотров:</label>
+        <input type="number" name="min_views" id="min_views" value="{{ request.args.get('min_views', '') }}">
+
+        <label for="search">Поиск:</label>
+        <input type="text" name="search" id="search" value="{{ request.args.get('search', '') }}">
+
+        <button type="submit">Применить</button>
+    </form>
+
+    <!-- Список продуктов -->
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> — {{ product.price }} Тенге
+                <a href="{{ url_for('view_product', product_id=product._id) }}">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}" width="100">
+                </a>
+                <form action="{{ url_for('delete_product', product_id=product._id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Удалить</button>
+                </form>
+                <a href="{{ url_for('edit_product', product_id=product._id) }}">
+                    <button type="button">Редактировать</button>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button onclick="window.location.href='{{ url_for('index') }}'">На главную</button>
+</body>
+</html>
