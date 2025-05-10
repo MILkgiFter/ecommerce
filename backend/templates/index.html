@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce App</title>
+    <title>Обновленный E-commerce</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Тестирование исправленного CI/CD pipeline</h1>
+    <h1>Обновленный сайт E-commerce - загружен с мастер-ноды</h1>
+    <p>Время обновления: <span id="datetime"></span></p>
+
+    <script>
+        document.getElementById("datetime").textContent = new Date().toLocaleString();
+    </script>
 
     {% if session.username %}
         <p>Вы вошли как <strong>{{ session.username }}</strong></p>
         <form action="{{ url_for('logout') }}" method="POST">
             <button type="submit">Выйти</button>
-        </form>
-        <form action="{{ url_for('delete_profile') }}" method="POST">
-            <button type="submit">Удалить профиль</button>
         </form>
         <a href="/profile">Профиль</a>
         <a href="/cart">Корзина</a>
